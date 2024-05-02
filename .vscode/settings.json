@@ -7,6 +7,7 @@
         "istream": "cpp",
         "tuple": "cpp",
         "utility": "cpp",
-        "cmath": "cpp"
+        "cmath": "cpp",
+        "iostream": "cpp"
     }
 }
