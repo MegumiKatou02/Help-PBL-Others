@@ -19,6 +19,10 @@ public:
     Diem QuayDiem(float goc) const;
 };
 
+Diem::Diem() {}
+
+Diem::Diem(float hoanhDo, float tungDo) : hoanhDo(hoanhDo), tungDo(tungDo) {}
+
 void Diem::Nhap() {
     cout << "Hoanh do: "; cin >> hoanhDo;
     cout << "Tung do: "; cin >> tungDo;
@@ -50,10 +54,6 @@ Diem Diem::QuayDiem(float goc) const {
     float y = this->hoanhDo * sin(rad) + this->tungDo * cos(rad);
     return Diem(x, y);
 }
-
-Diem::Diem() {}
-
-Diem::Diem(float hoanhDo, float tungDo) : hoanhDo(hoanhDo), tungDo(tungDo) {}
 
 float Diem::khoangCachHaiDiem(const Diem &diem) {
     return sqrt(pow(this->hoanhDo - diem.hoanhDo, 2) + pow(this->tungDo - diem.tungDo, 2));
