@@ -71,6 +71,7 @@ int main()
     cout << s;
     cout << "\nSau khi chuan hoa\n";
     cout << ChuanHoaChuoi(s);
-
+    cout << "\n";
+    
     return 0;
 }
