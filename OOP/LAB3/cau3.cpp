@@ -131,6 +131,7 @@ float DaGiac::DienTich() const {
     float sum = 0.0f;
     for(int i = 0; i < n - 1 ; i++) {
         sum = sum + (diem[i].getHoanhDo() * diem[i + 1].getTungDo()) - (diem[i].getTungDo() * diem[i + 1].getHoanhDo());
+        sum = fabs(sum);
     }
     sum = sum + (diem[n - 1].getHoanhDo() * diem[0].getTungDo()) - (diem[0].getHoanhDo() * diem[n - 1].getTungDo());
     sum = fabs(sum); 
@@ -154,6 +155,5 @@ Diem DaGiac::TrongTam() {
 int main() {
     DaGiac daGiac;
     daGiac.Nhap();
-    cout << daGiac.DienTich() << "\n";
     daGiac.TrongTam().Xuat();
 }
