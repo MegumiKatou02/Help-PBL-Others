@@ -95,11 +95,9 @@ public:
     Program();
     void MenuStart();
     void MenuChuanHoaChuoi();
-    int ChooseType();
     void InputRawString();
+    void MenuInHoaInThuong();
     string getRaw() const;
-    
-
 };
 
 Program::Program()
@@ -123,16 +121,10 @@ void Program::MenuChuanHoaChuoi()
     cout << "3. Thoat\n";
 }
 
-int Program::ChooseType()
-{
-    int choose; cin >> choose;
-    return choose;
-}
-
 void Program::InputRawString()
 {
     cout << "Nhap chuoi:\n";
-    cin >> raw;
+    getline(cin >> ws, raw);
 }
 
 string Program::getRaw() const
@@ -140,31 +132,67 @@ string Program::getRaw() const
     return raw;
 }
 
+void Program::MenuInHoaInThuong()
+{
+    cout << "1. In hoa theo dieu kien\n";
+    cout << "2. In thuong theo dieu kien\n";
+}
+
 int main()
 {
-    Program *program = new Program();
+    bool start = true;
+    string completeString = "";
+    string unCompleteString = "";
 
-    bool loop = true;
-
-    while(loop)
+    while(true)
     {
+        Program *program = new Program();
+        start = true;
         program->MenuStart();
-        int choose = program->ChooseType();
+        int choose; cin >> choose;
         if(choose == 1)
         {
             program->MenuChuanHoaChuoi();
-            int choose1 = program->ChooseType();
+            int choose1; cin >> choose1;
             if(choose1 == 1)
             {
                 program->InputRawString();
+                unCompleteString = program->getRaw();
                 ChuanHoaChuoi *chuanHoaChuoi = new ChuanHoaChuoi();
-                chuanHoaChuoi->ChuanHoaChuoiCom(program->getRaw());
+                completeString = chuanHoaChuoi->ChuanHoaChuoiCom(program->getRaw());
+
+                delete chuanHoaChuoi;
+            }
+            else if(choose1 == 2)
+            {
+                system("cls");
+                program->MenuInHoaInThuong();
+            }
+            else
+            {
+                start = false;
+                system("cls");
             }
         }
-
+        else if(choose == 5)
+        {
+            cout << "Thoat chuong trinh thanh cong !\n";
+            break;
+        }
+        else{
+            start = false;
+        }
+        if(start)
+        {
+            system("cls");
+            cout << "Chuoi truoc khi xu li\n";
+            cout << unCompleteString << "\n\n";
+            cout << "Chuoi sau khi da xu li:\n";
+            cout << completeString << "\n\n";
+        }
+        delete program;
+        program = nullptr;
     }
-
-    delete program;
 
     return 0;
 }
