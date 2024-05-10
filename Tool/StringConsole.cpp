@@ -87,10 +87,16 @@ string ChuanHoaChuoi::ChuanHoaChuoiCom(const string &s)
     return mainString.substr(1);
 }
 
+class ChuanHoaTheoDieuKien
+{
+
+};
+
 class Program
 {
 private:
     string raw;
+    bool upperCase;
 public:
     Program();
     void MenuStart();
@@ -103,6 +109,7 @@ public:
 Program::Program()
 {
     this->raw = "";
+    this->upperCase = false;
 }
 
 void Program::MenuStart()
@@ -136,6 +143,7 @@ void Program::MenuInHoaInThuong()
 {
     cout << "1. In hoa theo dieu kien\n";
     cout << "2. In thuong theo dieu kien\n";
+    cout << "3. Thoat\n";
 }
 
 int main()
@@ -167,6 +175,21 @@ int main()
             {
                 system("cls");
                 program->MenuInHoaInThuong();
+                int choose1_2; cin >> choose1_2;
+                if(choose1_2 == 1)
+                {
+                    program->InputRawString();
+                }
+                else if(choose1_2 == 2)
+                {
+                    program->InputRawString();
+                }
+                else
+                {
+                    start = false;
+                    system("cls");
+                }
+
             }
             else
             {
