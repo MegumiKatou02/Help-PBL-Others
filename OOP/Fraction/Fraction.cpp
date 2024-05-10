@@ -1,4 +1,4 @@
-#include "Fraction.h"
+#include "Fraction.hpp"
 
 Fraction::Fraction(int numerator, int denominator)
 {
