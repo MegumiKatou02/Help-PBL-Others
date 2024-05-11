@@ -134,6 +134,12 @@ string ChuanHoaTheoDieuKien::ChuanHoaChuoi(string otherRaw)
                     {return toupper(c); }
                 );
             }
+            else
+            {
+                transform(otherRaw.begin() + i, otherRaw.begin() + i + k, otherRaw.begin() + i, [](unsigned char c)
+                    {return tolower(c); }
+                );
+            }
         }
         temp = "";
     }
@@ -252,7 +258,6 @@ int main()
                     ChuanHoaTheoDieuKien *chuanhoaDK = new ChuanHoaTheoDieuKien(program->getRaw(), choose1_2);
                     unCompleteString = frame;
                     string temp = chuanhoaDK->ChuanHoaChuoi(frame);
-                    // cout << "temp: " << temp << "\n";
                     program->setRaw(temp); completeString = program->getRaw();
                     delete chuanhoaDK;
                 }
