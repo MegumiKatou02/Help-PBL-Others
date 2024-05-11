@@ -153,6 +153,7 @@ private:
 public:
     CatNoiChuoi(string raw);
     string CatChuoi(int n, int m = -1);
+    string NoiChuoi(const string &otherSubString, int index);
 };
 
 CatNoiChuoi::CatNoiChuoi(string raw)
@@ -174,6 +175,16 @@ string CatNoiChuoi::CatChuoi(int n, int m)
     {
         return raw.substr(0, n);
     }
+}
+
+string CatNoiChuoi::NoiChuoi(const string &otherSubString, int index)
+{
+    if(index > raw.length() - 1)
+    {
+        return raw + otherSubString;
+    }
+    string completed = raw.substr(0, index) + otherSubString + raw.substr(index);
+    return completed;
 }
 
 class Program
@@ -330,6 +341,23 @@ int main()
             string temporary = catNoiChuoi->CatChuoi(viTriBatDau, viTriKetThuc);
             completeString = temporary;
 
+            delete catNoiChuoi;
+        }
+        else if(choose == 3)
+        {
+            cout << "Nhap chuoi ban dau:\n";
+            string subString; getline(cin >> ws, subString);
+            unCompleteString = subString;
+            cout << "Nhap chuoi muon noi vao:\n";
+            string otherSubString; getline(cin >> ws, otherSubString);
+            program->ViTriCacChuoi(unCompleteString);
+            cout << "\nNhap lan luot vi tri de noi chuoi vao:\n";
+            int viTri; cin >> viTri;
+            CatNoiChuoi *catNoiChuoi = new CatNoiChuoi(subString);
+            string temporary = catNoiChuoi->NoiChuoi(otherSubString, viTri);
+            completeString = temporary;
+
+            delete catNoiChuoi;
         }
         else if(choose == 5)
         {
