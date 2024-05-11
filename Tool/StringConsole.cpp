@@ -4,6 +4,7 @@
 #include <sstream>
 #include <cctype>
 #include <algorithm>
+#include <regex>
 
 using namespace std;
 
@@ -187,6 +188,36 @@ string CatNoiChuoi::NoiChuoi(const string &otherSubString, int index)
     return completed;
 }
 
+class ReplaceString
+{
+private:
+    string raw;
+public:
+    ReplaceString(string raw);
+    void ThayTheChuoi(string wantChangeString, string changeString);
+    string getRaw();
+};
+
+ReplaceString::ReplaceString(string raw)
+{
+    this->raw = raw;
+}
+
+void ReplaceString::ThayTheChuoi(string wantChangeString, string changeString)
+{
+    size_t pos = 0;
+    while((pos = raw.find(wantChangeString, pos)) != string::npos)
+    {
+        raw.replace(pos, wantChangeString.length(), changeString);
+        pos += changeString.length();
+    }
+}
+
+string ReplaceString::getRaw()
+{
+    return raw;
+}
+
 class Program
 {
 private:
@@ -215,7 +246,8 @@ void Program::MenuStart()
     cout << "2. Cat chuoi\n";
     cout << "3. Noi chuoi\n";
     cout << "4. Thay the trong chuoi\n";
-    cout << "5. Thoat chuong trinh\n";
+    cout << "5. Xem thong tin chuoi\n";
+    cout << "6. Thoat chuong trinh\n";
 }
 
 void Program::MenuChuanHoaChuoi()
@@ -359,7 +391,23 @@ int main()
 
             delete catNoiChuoi;
         }
-        else if(choose == 5)
+        else if(choose == 4)
+        {
+            cout << "Nhap chuoi ban dau:\n";
+            string originString; getline(cin >> ws, originString);
+            cout << "Nhap chuoi muon thay the:\n";
+            string wantChangeString; getline(cin >> ws, wantChangeString);
+            cout << "Nhap chuoi thay the:\n";
+            string changeString; getline(cin >> ws, changeString);
+            unCompleteString = originString;
+            ReplaceString *replaceString = new ReplaceString(originString);
+            replaceString->ThayTheChuoi(wantChangeString, changeString);
+            completeString = replaceString->getRaw();
+            // int what; cin >> what;
+
+            delete replaceString;
+        }
+        else if(choose == 6)
         {
             cout << "Thoat chuong trinh thanh cong !\n";
             break;
