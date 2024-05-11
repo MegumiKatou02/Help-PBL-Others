@@ -146,6 +146,36 @@ string ChuanHoaTheoDieuKien::ChuanHoaChuoi(string otherRaw)
     return otherRaw;
 }
 
+class CatNoiChuoi
+{
+private:
+    string raw;
+public:
+    CatNoiChuoi(string raw);
+    string CatChuoi(int n, int m = -1);
+};
+
+CatNoiChuoi::CatNoiChuoi(string raw)
+{
+    this->raw = raw;
+}
+
+string CatNoiChuoi::CatChuoi(int n, int m)
+{
+    int k = raw.length();
+    if(n > k || m > k) return raw;
+    if(n < 0 && m < 0) return raw;
+    if(n < 0)
+    {
+        if(m == k - 1) return "";
+        return raw.substr(m + 1);
+    }
+    if(m < 0)
+    {
+        return raw.substr(0, n);
+    }
+}
+
 class Program
 {
 private:
@@ -159,6 +189,7 @@ public:
     void MenuInHoaInThuong();
     string getRaw();
     void setRaw(string raw);
+    void ViTriCacChuoi(const string &raw);
 };
 
 Program::Program()
@@ -199,6 +230,24 @@ void Program::MenuInHoaInThuong()
     cout << "1. In hoa theo dieu kien\n";
     cout << "2. In thuong theo dieu kien\n";
     cout << "3. Thoat\n";
+}
+
+void Program::ViTriCacChuoi(const string &raw)
+{
+    int n = raw.length();
+    for(int i = 0; i < n; i++)
+    {
+        cout << i << " ";
+    }
+    cout << "\n";
+    for(int i = 0; i < n; i++)
+    {
+        if(i > 10)
+        {
+            cout << " " << raw[i] << " ";
+        }
+        else cout << raw[i] << " ";
+    }
 }
 
 void Program::setRaw(string raw)
@@ -269,6 +318,19 @@ int main()
                 system("cls");
             }
         }
+        else if(choose == 2)
+        {
+            cout << "Nhap chuoi muon cat:\n";
+            string concatString; getline(cin >> ws, concatString);
+            unCompleteString = concatString;
+            program->ViTriCacChuoi(concatString);
+            cout << "\nNhap lan luot vi tri bat dau va ket thuc de cat chuoi:\n";
+            int viTriBatDau, viTriKetThuc; cin >> viTriBatDau >> viTriKetThuc;
+            CatNoiChuoi *catNoiChuoi = new CatNoiChuoi(concatString);
+            string temporary = catNoiChuoi->CatChuoi(viTriBatDau, viTriKetThuc);
+            completeString = temporary;
+
+        }
         else if(choose == 5)
         {
             cout << "Thoat chuong trinh thanh cong !\n";
@@ -281,9 +343,10 @@ int main()
         {
             system("cls");
             cout << "Chuoi truoc khi xu li\n";
-            cout << unCompleteString << "\n\n";
+            cout << (unCompleteString.empty() ? "[Empty..]" : unCompleteString) << "\n\n";
             cout << "Chuoi sau khi da xu li:\n";
-            cout << completeString << "\n\n";
+            cout << (completeString.empty() ? "[Empty..]" : completeString) << "\n\n";
+
         }
         delete program;
         program = nullptr;
