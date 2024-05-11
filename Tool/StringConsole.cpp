@@ -177,6 +177,8 @@ string CatNoiChuoi::CatChuoi(int n, int m)
     {
         return raw.substr(0, n);
     }
+
+    return raw.substr(0, n) + raw.substr(m + 1);
 }
 
 string CatNoiChuoi::NoiChuoi(const string &otherSubString, int index)
@@ -266,6 +268,7 @@ public:
     string getRaw();
     void setRaw(string raw);
     void ViTriCacChuoi(const string &raw);
+    int DoDaiCuaChuoiKhongKhoangTrang(const string &raw);
 };
 
 Program::Program()
@@ -336,6 +339,18 @@ void Program::setRaw(string raw)
     this->raw = raw;
 }
 
+int Program::DoDaiCuaChuoiKhongKhoangTrang(const string &raw)
+{
+    int n = raw.length(); int count = 0;
+    for(int i = 0; i < n; i++)
+    {
+        char ch = raw[i];
+        if(ch == ' ') continue;
+        count++;
+    }
+    return count;
+}
+
 int main()
 {
     bool start = true;
@@ -350,6 +365,7 @@ int main()
         int choose; cin >> choose;
         if(choose == 1)
         {
+            system("cls");
             program->MenuChuanHoaChuoi();
             int choose1; cin >> choose1;
             if(choose1 == 1)
@@ -448,11 +464,13 @@ int main()
         {
             cout << "Nhap chuoi:\n";
             string s; getline(cin >> ws, s);
+            system("cls");
             cout << "\nChuoi: \n";
-            cout << s << "\n";
+            cout << s << "\n\n";
             cout << "Toa do vi tri cac chuoi:\n";
             program->ViTriCacChuoi(s);
-            cout << "Do dai cua chuoi: " << s.length() << "\n";
+            cout << "\n\nDo dai cua chuoi: " << s.length() << "\n";
+            cout << "\nDo dai cua chuoi khi khong co khoang trang: " << program->DoDaiCuaChuoiKhongKhoangTrang(s) << "\n";
             cout << "\nTan suat cua cac chu cai trong chuoi:\n";
             InformationString *information = new InformationString(s);
 
@@ -462,12 +480,14 @@ int main()
 
             cout << "Nhap phim bat ki de thoat\n";
             string m; cin >> m;
-            
+            system("cls");
             continue;
         }
         else if(choose == 6)
         {
+            system("cls");
             cout << "Thoat chuong trinh thanh cong !\n";
+            cout << "Cam on ban da su dung chuong trinh\n";
             break;
         }
         else{
@@ -480,6 +500,9 @@ int main()
             cout << (unCompleteString.empty() ? "[Empty..]" : unCompleteString) << "\n\n";
             cout << "Chuoi sau khi da xu li:\n";
             cout << (completeString.empty() ? "[Empty..]" : completeString) << "\n\n";
+            cout << "Nhap phim bat ki de thoat\n";
+            string anyKey; cin >> anyKey;
+            system("cls");
 
         }
         delete program;
