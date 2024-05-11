@@ -8,6 +8,7 @@
         "tuple": "cpp",
         "utility": "cpp",
         "cmath": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "new": "cpp"
     }
 }
