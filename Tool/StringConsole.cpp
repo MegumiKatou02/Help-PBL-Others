@@ -5,6 +5,7 @@
 #include <cctype>
 #include <algorithm>
 #include <regex>
+#include <map>
 
 using namespace std;
 
@@ -218,6 +219,39 @@ string ReplaceString::getRaw()
     return raw;
 }
 
+class InformationString
+{
+private:
+    string raw;
+public:
+    InformationString(string raw);
+    void InTanSoTrongChuoi();
+};
+
+InformationString::InformationString(string raw)
+{
+    this->raw = raw;
+}
+
+void InformationString::InTanSoTrongChuoi()
+{
+    map<char, int> mp;
+    for(int i = 0; i < raw.length(); i++)
+    {
+        char ch = raw[i];
+        mp[ch]++;
+    }
+    for(const pair<char, int> &x : mp)
+    {
+        if(x.first == ' ')
+        {
+            cout << "Space";
+        }
+        else cout << x.first; 
+        cout << " - " << x.second << "\n";
+    }
+}
+
 class Program
 {
 private:
@@ -288,6 +322,10 @@ void Program::ViTriCacChuoi(const string &raw)
         if(i > 10)
         {
             cout << " " << raw[i] << " ";
+        }
+        else if(i > 100)
+        {
+            cout << "  " << raw[i] << "  ";
         }
         else cout << raw[i] << " ";
     }
@@ -403,9 +441,29 @@ int main()
             ReplaceString *replaceString = new ReplaceString(originString);
             replaceString->ThayTheChuoi(wantChangeString, changeString);
             completeString = replaceString->getRaw();
-            // int what; cin >> what;
 
             delete replaceString;
+        }
+        else if(choose == 5)
+        {
+            cout << "Nhap chuoi:\n";
+            string s; getline(cin >> ws, s);
+            cout << "\nChuoi: \n";
+            cout << s << "\n";
+            cout << "Toa do vi tri cac chuoi:\n";
+            program->ViTriCacChuoi(s);
+            cout << "Do dai cua chuoi: " << s.length() << "\n";
+            cout << "\nTan suat cua cac chu cai trong chuoi:\n";
+            InformationString *information = new InformationString(s);
+
+            information->InTanSoTrongChuoi();
+
+            delete information;
+
+            cout << "Nhap phim bat ki de thoat\n";
+            string m; cin >> m;
+            
+            continue;
         }
         else if(choose == 6)
         {
