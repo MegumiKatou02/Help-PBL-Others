@@ -2,8 +2,15 @@
 #include <string>
 #include <vector>
 #include <sstream>
+#include <cctype>
+#include <algorithm>
 
 using namespace std;
+
+bool ChuThuong(const char &ch)
+{
+    return ch >= 'a' && ch <= 'z';
+}
 
 class ChuanHoaChuoi
 {
@@ -89,8 +96,49 @@ string ChuanHoaChuoi::ChuanHoaChuoiCom(const string &s)
 
 class ChuanHoaTheoDieuKien
 {
-
+private:
+    string raw;
+    bool upperCase;
+public:
+    ChuanHoaTheoDieuKien(string raw, const int number);
+    ~ChuanHoaTheoDieuKien() { raw = ""; }
+    string ChuanHoaChuoi(string otherRaw);
 };
+
+ChuanHoaTheoDieuKien::ChuanHoaTheoDieuKien(string raw, const int number) {
+    this->raw = raw;
+    if(number == 1)
+    {
+        upperCase = true;
+
+    }
+    else upperCase = false;
+}
+
+string ChuanHoaTheoDieuKien::ChuanHoaChuoi(string otherRaw)
+{
+    int k = raw.length();
+    int n = otherRaw.length();
+    string temp = "";
+    for(int i = 0; i < otherRaw.length() - k + 1; i++)
+    {
+        for(int j = i; j < k + i; j++)
+        {
+            temp += otherRaw[j];
+        }
+        if(temp == this->raw)
+        {
+            if(upperCase)
+            {
+                transform(otherRaw.begin() + i, otherRaw.begin() + i + k, otherRaw.begin() + i, [](unsigned char c)
+                    {return toupper(c); }
+                );
+            }
+        }
+        temp = "";
+    }
+    return otherRaw;
+}
 
 class Program
 {
@@ -103,7 +151,8 @@ public:
     void MenuChuanHoaChuoi();
     void InputRawString();
     void MenuInHoaInThuong();
-    string getRaw() const;
+    string getRaw();
+    void setRaw(string raw);
 };
 
 Program::Program()
@@ -134,7 +183,7 @@ void Program::InputRawString()
     getline(cin >> ws, raw);
 }
 
-string Program::getRaw() const
+string Program::getRaw()
 {
     return raw;
 }
@@ -144,6 +193,11 @@ void Program::MenuInHoaInThuong()
     cout << "1. In hoa theo dieu kien\n";
     cout << "2. In thuong theo dieu kien\n";
     cout << "3. Thoat\n";
+}
+
+void Program::setRaw(string raw)
+{
+    this->raw = raw;
 }
 
 int main()
@@ -178,16 +232,29 @@ int main()
                 int choose1_2; cin >> choose1_2;
                 if(choose1_2 == 1)
                 {
-                    program->InputRawString();
+                    cout << "Nhap nhung tu se in hoa: \n";
+                    program->InputRawString(); 
                 }
                 else if(choose1_2 == 2)
                 {
+                    cout << "Nhap nhung tu se in thuong: \n";
                     program->InputRawString();
                 }
                 else
                 {
                     start = false;
                     system("cls");
+                }
+                if(start)
+                {
+                    cout << "Nhap cau de thuc hien:\n";
+                    string frame; getline(cin >> ws, frame);
+                    ChuanHoaTheoDieuKien *chuanhoaDK = new ChuanHoaTheoDieuKien(program->getRaw(), choose1_2);
+                    unCompleteString = frame;
+                    string temp = chuanhoaDK->ChuanHoaChuoi(frame);
+                    // cout << "temp: " << temp << "\n";
+                    program->setRaw(temp); completeString = program->getRaw();
+                    delete chuanhoaDK;
                 }
 
             }

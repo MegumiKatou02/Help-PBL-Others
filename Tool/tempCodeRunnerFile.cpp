@@ -1,0 +1,1 @@
+string temp = chuanhoaDK->ChuanHoaChuoi(program->getRaw());
