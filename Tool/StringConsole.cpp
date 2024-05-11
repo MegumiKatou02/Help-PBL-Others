@@ -432,10 +432,12 @@ int main()
         else if(choose == 3)
         {
             cout << "Nhap chuoi ban dau:\n";
-            string subString; getline(cin >> ws, subString);
+            cin.ignore();
+            string subString; getline(cin, subString);
             unCompleteString = subString;
             cout << "Nhap chuoi muon noi vao:\n";
-            string otherSubString; getline(cin >> ws, otherSubString);
+            cin.ignore();
+            string otherSubString; getline(cin, otherSubString);
             program->ViTriCacChuoi(unCompleteString);
             cout << "\nNhap lan luot vi tri de noi chuoi vao:\n";
             int viTri; cin >> viTri;
