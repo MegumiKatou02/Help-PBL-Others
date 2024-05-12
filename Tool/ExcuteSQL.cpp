@@ -9,8 +9,8 @@ using namespace std;
 enum TypeDate
 {
     VARCHAR,
-    INT,
-    DOUBLE
+    INTEGER,
+    DOUBLEF
 };
 
 int DemCau(const string &s)
@@ -101,7 +101,6 @@ vector<string> tachChuoi(vector<string> dongSQL[], vector<int> dataType, int bat
         // duyet theo hang ngang
         for(int j = 0; j < dongSQL[i].size(); j++)
         {
-            //cout << j << " -- " << dongSQL[i][j] << "\n";
             string current = dongSQL[i][j];
             if(j >= batDauCau && j <= ketThucCau && dongSQL[i].size() > soCot)
             {
@@ -114,7 +113,6 @@ vector<string> tachChuoi(vector<string> dongSQL[], vector<int> dataType, int bat
                         temp = temp + " ";
                     }
                 }
-                //cout << "temp: " << temp << "\n";
                 int pround = -1;
                 if(batDauCau == 0) pround = batDauCau;
                 if(ketThucCau == dongSQL[i].size() - 1) pround = ketThucCau; 
@@ -124,22 +122,13 @@ vector<string> tachChuoi(vector<string> dongSQL[], vector<int> dataType, int bat
                 {
                     theoDong = theoDong + ", ";
                 }
-                //cout << "theo dong: " << theoDong << "\n";
-                //j = ketThucCau;
-                // don lai mot kieu
                 dongSQL[i][batDauCau] = temp;
-                for(int m = ketThucCau; m < dongSQL[i].size() - 1; m++)
+            
+                for(int m = batDauCau + 1; m + ketThucCau - batDauCau < dongSQL[i].size(); m++)
                 {
-                    dongSQL[i][m] = dongSQL[i][m + 1];
+                    dongSQL[i][m] = dongSQL[i][m + ketThucCau - batDauCau];
                 }
-                dongSQL[i].resize(dongSQL[i].size() - 1);
-                // cout << "New size: " << dongSQL[i].size() << "\n";
-                // cout << "###\n";
-                // for(const string &s : dongSQL[i])
-                // {
-                //     cout << s << " - ";
-                // }
-                // cout << "\n###\n";
+                dongSQL[i].resize(soCot);
             }
             else
             {
@@ -166,11 +155,11 @@ int main()
     cout << "Nhap kieu du lieu cua tung cot:\n";
     for(int i = 0; i < soCot; i++)
     {
-        cout << "0. VARCHAR, 1. INT, 2.DOUBLE/FLOAT: ";
+        cout << "0. VARCHAR, 1. INTEGER, 2.DOUBLE/FLOAT: ";
         int type; cin >> type;
-        if(type == INT) dataType.push_back(INT);
+        if(type == INTEGER) dataType.push_back(INTEGER);
         if(type == VARCHAR) dataType.push_back(VARCHAR);
-        if(type == DOUBLE) dataType.push_back(DOUBLE);
+        if(type == DOUBLEF) dataType.push_back(DOUBLEF);
     }
     int testCase = soDong;
     vector<string> dongSQL[soDong + 1];
