@@ -176,7 +176,7 @@ int main()
         {
             cout << "So tu trong cau lon hon so cot\n";
             ViTriCacChuoi(inputSQL.substr(0, inputSQL.length() - 1));
-            cout << "\nNhap vi tri bat dau va ket thuc de gop thanh mot kieu du liet:\n";
+            cout << "\nNhap vi tri bat dau va ket thuc de gop thanh mot kieu du lieu:\n";
             int start, end; cin >> start >> end; cin.ignore();
             
             int count = 0;
