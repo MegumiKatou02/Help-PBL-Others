@@ -64,9 +64,86 @@ string trim(const string &s)
     return out2;
 }
 
-vector<string> tachChuoi(vector<string> dongSQL[], vector<int> dataType, int batDauCau, int ketThucCau)
+vector<string> tachChuoi(vector<string> dongSQL[], vector<int> dataType, int batDauCau, int ketThucCau, int soDong)
 {
-    
+    vector<string> completed;
+    string theoDong = "", temp = "";
+    // duyt theo hang doc
+    for(int i = 1; i <= soDong; i++)
+    {
+        // duyet theo hang ngang
+        for(int j = 0; j < dongSQL[i].size(); j++)
+        {
+            string current = dongSQL[i][j];
+            if(j >= batDauCau && j <= ketThucCau)
+            {
+                temp = "";
+                for(int k = batDauCau; k <= ketThucCau; k++)
+                {
+                    temp = temp + dongSQL[i][k];
+                    if(k != ketThucCau)
+                    {
+                        temp = temp + " ";
+                    }
+                }
+                if(dataType[i] == VARCHAR)
+                {
+                    temp = "\'" + temp + "\'";
+                }
+                j = ketThucCau + 1;
+            }
+            else
+            {
+                if(dataType[i] == VARCHAR)
+                {
+                    if(j == 0 && j == dongSQL[i].size() - 1)
+                    {
+                        theoDong = theoDong + "(\'" + current + "\')"; 
+                    }
+                    else if(j == 0)
+                    {
+                        theoDong = theoDong + "(\'" + current + "\'"; 
+                    }
+                    else if(j == dongSQL[i].size() - 1)
+                    {
+                        theoDong = theoDong + "\'" + current + "\')";
+                    }
+                    else 
+                    {
+                        theoDong = theoDong + "\'" + current + "\'";
+                    }
+                }
+                else // INCLUDES: INT, DOUBLE/FLOAT
+                {
+                    if(j == 0 && j == dongSQL[i].size() - 1)
+                    {
+                        theoDong = theoDong = "(" + current + ")";
+                    }
+                    else if(j == 0)
+                    {
+                        theoDong = theoDong + "(" + current;
+                    }
+                    else if(j == dongSQL[i].size() - 1)
+                    {
+                        theoDong = theoDong + current + ")";
+                    }
+                    else 
+                    {
+                        theoDong = theoDong + current;
+                    }
+                }
+                if(j != dongSQL[i].size() - 1)
+                {
+                    theoDong = theoDong + ", ";
+                }
+                theoDong = theoDong + temp;
+                temp = "";
+            }
+        }
+        completed.push_back(theoDong);
+        theoDong = "";
+    }
+    return completed;
 }
 
 int main()
@@ -86,7 +163,7 @@ int main()
         if(type == DOUBLE) dataType.push_back(DOUBLE);
     }
     int testCase = soDong;
-    vector<string> dongSQL[soDong];
+    vector<string> dongSQL[soDong + 1];
     vector<string> containsSQL(soDong);
     int batDauCau = -1, ketThucCau = -1;
     bool chinhCau = false;
