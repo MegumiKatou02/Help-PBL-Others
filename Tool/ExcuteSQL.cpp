@@ -189,9 +189,7 @@ int main()
                     (start == i) ? batDauCau = step : ketThucCau = step;
                 }
                 if(ch == ' ')
-                {   
                     count++;
-                }
             }
             chinhCau = true;
         }
@@ -205,9 +203,7 @@ int main()
                 temp = "";
             }
             else 
-            {
                 temp += ch;
-            }
         }
 
         testCase--;
@@ -229,7 +225,6 @@ int main()
         cout << "\n";
         count++;
     }
-
 
     return 0;
 }
