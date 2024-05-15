@@ -6,7 +6,7 @@
 
 using namespace std;
 
-enum TypeDate
+enum TypeDate   
 {
     VARCHAR,
     INTEGER,
