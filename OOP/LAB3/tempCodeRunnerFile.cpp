@@ -1,1 +1,0 @@
-diem[i].getTungDo(
