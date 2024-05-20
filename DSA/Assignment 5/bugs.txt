@@ -1,0 +1,703 @@
+101
+100
+20520001
+Nguyen The Nhu Quynh
+2003
+0
+5.3
+20520001 - 33 - Nguyen The Nhu Quynh
+20520003
+Le Hoang Quan
+2003
+1
+9.7
+20520003 - 35 - Le Hoang Quan
+20520005
+Dinh Van Phuong
+2003
+1
+7.2
+20520005 - 37 - Dinh Van Phuong
+20520007
+Nguyen Echam Samuel
+2003
+1
+8.9
+20520007 - 39 - Nguyen Echam Samuel
+20520008
+Nguyen Xuan Sang
+2002
+1
+6.9
+20520008 - 40 - Nguyen Xuan Sang
+20520009
+Le Phu Quy
+2004
+1
+9.6
+20520009 - 41 - Le Phu Quy
+20520010
+Ly Quoc Quyen
+2002
+1
+8.1
+20520010 - 42 - Ly Quoc Quyen
+20520011
+Bui Minh Quan
+2002
+1
+8.5
+20520011 - 43 - Bui Minh Quan
+20520013
+Nguyen Ngoc Son
+2003
+1
+9.5
+20520013 - 45 - Nguyen Ngoc Son
+20520015
+Bui Duy Quy
+2003
+1
+9.3
+20520015 - 47 - Bui Duy Quy
+20520016
+Vo Hoang Phuong
+2004
+1
+5.6
+20520016 - 48 - Vo Hoang Phuong
+20520018
+Tran Minh Phuong
+2004
+0
+5.5
+20520018 - 50 - Tran Minh Phuong
+20520019
+Phan Duy Quoc
+2004
+1
+7.1
+20520019 - 51 - Phan Duy Quoc
+20520021
+Nguyen Vu Ngoc Quyen
+2002
+0
+5.6
+20520021 - 53 - Nguyen Vu Ngoc Quyen
+20520023
+Truong Trong Quan
+2003
+1
+5.3
+20520023 - 55 - Truong Trong Quan
+20520024
+Pham Minh Quan
+2002
+1
+7.0
+20520024 - 56 - Pham Minh Quan
+20520026
+Vo Thanh Sanh
+2004
+1
+9.3
+20520026 - 58 - Vo Thanh Sanh
+20520028
+Nguyen Minh Phuong
+2002
+0
+7.6
+20520028 - 60 - Nguyen Minh Phuong
+20520029
+Nguyen Viet Son
+2003
+1
+9.6
+20520029 - 61 - Nguyen Viet Son
+20520030
+Vu Hoang Hai Son
+2002
+1
+5.5
+20520030 - 62 - Vu Hoang Hai Son
+20520032
+Nguyen Hai Son
+2004
+1
+7.4
+20520032 - 64 - Nguyen Hai Son
+20520033
+Nguyen Vu Truong Son
+2004
+1
+8.6
+20520033 - 65 - Nguyen Vu Truong Son
+20520034
+Tran Minh Sang
+2004
+1
+9.6
+20520034 - 66 - Tran Minh Sang
+20520036
+Nguyen Trung Son
+2002
+1
+8.3
+20520036 - 68 - Nguyen Trung Son
+20520037
+Le Quang
+2004
+1
+9.1
+20520037 - 69 - Le Quang
+20520038
+Vu The Phuong
+2003
+1
+7.4
+20520038 - 70 - Vu The Phuong
+20520040
+Nguyen Van Son
+2003
+1
+9.0
+20520040 - 72 - Nguyen Van Son
+20520042
+Le Anh Son
+2003
+1
+9.8
+20520042 - 74 - Le Anh Son
+20520044
+Vo Tien Se
+2004
+1
+7.0
+20520044 - 76 - Vo Tien Se
+20520046
+Phan Duc Son
+2003
+1
+8.5
+20520046 - 78 - Phan Duc Son
+20520048
+Tran The Son
+2002
+1
+7.5
+20520048 - 80 - Tran The Son
+20520049
+Vu Hong Tam
+2002
+0
+5.5
+20520049 - 81 - Vu Hong Tam
+20520050
+Nguyen Minh Tan
+2003
+1
+7.7
+20520050 - 82 - Nguyen Minh Tan
+20520052
+Le Ha Xuan Thai
+2004
+1
+6.2
+20520052 - 84 - Le Ha Xuan Thai
+20520053
+Nguyen Ngoc Phuong
+2004
+1
+8.9
+20520053 - 85 - Nguyen Ngoc Phuong
+20520054
+Bui Anh Tai
+2003
+1
+5.5
+20520054 - 86 - Bui Anh Tai
+20520056
+Duong Che Tam
+2004
+1
+9.2
+20520056 - 88 - Duong Che Tam
+20520057
+Pham Thanh Quoc
+2004
+1
+6.4
+20520057 - 89 - Pham Thanh Quoc
+20520059
+Le Truong Sa
+2004
+1
+8.4
+20520059 - 91 - Le Truong Sa
+20520060
+Luu Nguyen Quoc Son
+2004
+1
+7.7
+20520060 - 92 - Luu Nguyen Quoc Son
+20520062
+Ngo Vu Sang
+2002
+1
+9.7
+20520062 - 94 - Ngo Vu Sang
+20520063
+Le Cong Tai
+2002
+1
+7.6
+20520063 - 95 - Le Cong Tai
+20520064
+Do Minh Tam
+2003
+0
+8.0
+20520064 - 96 - Do Minh Tam
+20520065
+Tran The Minh Suong
+2002
+1
+5.5
+20520065 - 97 - Tran The Minh Suong
+20520067
+Tran Van Tai
+2003
+1
+6.8
+20520067 - 99 - Tran Van Tai
+20520068
+Le Van Tai
+2002
+1
+7.7
+20520068 - 100 - Le Van Tai
+20520069
+Vu The Hoai Son
+2003
+1
+7.7
+20520069 - 0 - Vu The Hoai Son
+20520070
+Duong Thanh Tam
+2003
+0
+8.1
+20520070 - 1 - Duong Thanh Tam
+20520071
+Ho Quoc Tai
+2002
+1
+6.0
+20520071 - 2 - Ho Quoc Tai
+20520073
+Huynh Le Tan Tai
+2002
+1
+7.6
+20520073 - 4 - Huynh Le Tan Tai
+20520074
+Huynh Huu Tam
+2004
+1
+5.6
+20520074 - 5 - Huynh Huu Tam
+20520076
+Nguyen Anh Tan
+2003
+1
+9.3
+20520076 - 7 - Nguyen Anh Tan
+20520077
+Nguyen Ngoc Than
+2004
+1
+7.4
+20520077 - 8 - Nguyen Ngoc Than
+20520079
+Doan Thanh Tan
+2002
+1
+5.8
+20520079 - 10 - Doan Thanh Tan
+20520081
+Vu Minh Thai
+2003
+1
+9.6
+20520081 - 12 - Vu Minh Thai
+20520082
+Dang Xuan Thanh
+2003
+0
+7.4
+20520082 - 13 - Dang Xuan Thanh
+20520084
+Vu Van Thanh
+2002
+1
+7.8
+20520084 - 15 - Vu Van Thanh
+20520085
+Le Duy Thang
+2004
+1
+9.5
+20520085 - 16 - Le Duy Thang
+20520086
+Ho Nguyen Xuan Thanh
+2002
+0
+7.8
+20520086 - 17 - Ho Nguyen Xuan Thanh
+20520088
+Tran Tat Thang
+2003
+1
+8.9
+20520088 - 19 - Tran Tat Thang
+20520090
+Nguyen Che Thanh
+2002
+1
+6.4
+20520090 - 21 - Nguyen Che Thanh
+20520091
+Phan Xuan Thang
+2002
+1
+5.2
+20520091 - 22 - Phan Xuan Thang
+20520093
+Bui Minh Thao
+2003
+0
+6.1
+20520093 - 24 - Bui Minh Thao
+20520094
+Dang Van Thang
+2004
+1
+5.8
+20520094 - 25 - Dang Van Thang
+20520095
+Diep Vuong Thang
+2002
+1
+7.8
+20520095 - 26 - Diep Vuong Thang
+20520096
+Dinh Xuan Thang
+2002
+1
+8.2
+20520096 - 27 - Dinh Xuan Thang
+20520098
+Lam Van Thanh
+2004
+1
+8.2
+20520098 - 29 - Lam Van Thanh
+20520100
+Nguyen Tien Thanh
+2003
+1
+9.5
+20520100 - 31 - Nguyen Tien Thanh
+20520102
+Dam Van Thien
+2002
+1
+5.9
+20520102 - 33 - Dam Van Thien
+20520103
+Nguyen Van Thanh
+2003
+1
+7.3
+20520103 - 34 - Nguyen Van Thanh
+20520104
+Vo Duc Thao
+2004
+1
+9.8
+20520104 - 35 - Vo Duc Thao
+20520105
+Bui Trung Thanh
+2003
+1
+6.5
+20520105 - 36 - Bui Trung Thanh
+20520106
+Le Tan Thanh
+2004
+1
+8.0
+20520106 - 37 - Le Tan Thanh
+20520107
+Le Tien Thanh
+2004
+1
+5.1
+20520107 - 38 - Le Tien Thanh
+20520109
+Nguyen Denh Thi
+2004
+1
+6.4
+20520109 - 40 - Nguyen Denh Thi
+20520111
+Nguyen Cong Thanh
+2004
+1
+9.9
+20520111 - 42 - Nguyen Cong Thanh
+20520112
+Luong Van Thao
+2004
+1
+6.5
+20520112 - 43 - Luong Van Thao
+20520114
+Cao Ba Thanh
+2004
+1
+5.6
+20520114 - 45 - Cao Ba Thanh
+20520116
+Nguyen Huu The
+2002
+1
+5.4
+20520116 - 47 - Nguyen Huu The
+20520118
+Dao Van Thien
+2004
+1
+5.9
+20520118 - 49 - Dao Van Thien
+20520119
+Nguyen Van Thenh
+2002
+1
+8.2
+20520119 - 50 - Nguyen Van Thenh
+20520120
+Nguyen Duc Thong
+2004
+1
+5.5
+20520120 - 51 - Nguyen Duc Thong
+20520121
+Nguyen Le Truong Tho
+2002
+1
+7.6
+20520121 - 52 - Nguyen Le Truong Tho
+20520123
+Tran Minh Thong
+2004
+1
+5.1
+20520123 - 54 - Tran Minh Thong
+20520124
+Pham Quang Thong
+2002
+1
+8.0
+20520124 - 55 - Pham Quang Thong
+20520125
+Trenh Duc Thien
+2002
+1
+8.3
+20520125 - 56 - Trenh Duc Thien
+20520126
+Ho Quang Thenh
+2004
+1
+5.2
+20520126 - 57 - Ho Quang Thenh
+20520127
+Tran Quang Van Thu
+2003
+1
+5.3
+20520127 - 58 - Tran Quang Van Thu
+20520128
+Nguyen Ngoc Hoai Thu
+2004
+1
+8.6
+20520128 - 59 - Nguyen Ngoc Hoai Thu
+20520130
+Nguyen Benh Khiem
+2003
+1
+7.2
+20520130 - 61 - Nguyen Benh Khiem
+20520132
+Huynh The Kim Sinh
+2003
+1
+5.3
+20520132 - 63 - Huynh The Kim Sinh
+20520133
+Le Ngoc Thuan
+2003
+1
+8.5
+20520133 - 64 - Le Ngoc Thuan
+20520135
+Huynh Tran Thu
+2004
+1
+9.0
+20520135 - 66 - Huynh Tran Thu
+20520137
+Pham The Thanh Thuy
+2002
+1
+6.5
+20520137 - 68 - Pham The Thanh Thuy
+20520139
+Nguyen Hong Thong
+2002
+1
+8.3
+20520139 - 70 - Nguyen Hong Thong
+20520141
+Nguyen Cao Truong
+2003
+1
+5.1
+20520141 - 72 - Nguyen Cao Truong
+20520143
+Pham Cong Thuong
+2003
+1
+5.9
+20520143 - 74 - Pham Cong Thuong
+20520145
+Phan Khanh Thuan
+2003
+1
+7.4
+20520145 - 76 - Phan Khanh Thuan
+20520146
+Nguyen Denh Le Thuan
+2002
+1
+5.4
+20520146 - 77 - Nguyen Denh Le Thuan
+20520148
+Nguyen Quoc Thenh
+2003
+1
+6.7
+20520148 - 79 - Nguyen Quoc Thenh
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
+[0,    , , , ]
