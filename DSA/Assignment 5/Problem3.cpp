@@ -78,36 +78,27 @@ void DeleteHashtable(Hashtable &ht) {
 }
 
 int Insert(Hashtable &ht, Hocsinh x) {
-    if(ht.n >= LOAD * ht.M) return 0;
-    int key = x.Maso;
-    int index = key % ht.M;
-    cout << key << " - " << index << " - " << x.Hoten << "\n";
-    // int i = 1;
-    // while(true)
-    // {
-    //     int newIndex = (index + i) % ht.M;
-    //     if(ht.table[newIndex].Maso == EMPTY || ht.table[newIndex].Maso == DELETE)
-    //     {
-    //         ht.table[newIndex] = x;
-    //         ht.n++;
-    //         return 1;
-    //     }
-    //     else 
-    //     {
-    //         i++;
-    //     }
-    // }
-    // for(int i = 0; i < ht.M; i++)
-    // {
-    //     int newIndex = (index + i) % ht.M;
-    //     if(ht.table[newIndex].Maso == EMPTY || ht.table[newIndex].Maso == DELETE)
-    //     {
-    //         cout << "Success: " << newIndex << " - " << x.Hoten << "\n";
-    //         ht.table[newIndex] = x;
-    //         ht.n++;
-    //         return 1;
-    //     }
-    //     else cout << newIndex << " - " << x.Hoten << "\n";
-    // }
+
+
+int M = ht.M;
+    int hashIndex = x.Maso % M;
+    if (ht.table[hashIndex].Maso == EMPTY && (double)(ht.n + 1) / M < LOAD)
+    {
+        ht.table[hashIndex] = x;
+        ht.n++;
+        return 1;
+    }
+    int i = 1;
+    while ((double)(ht.n + 1) / M < LOAD && i < 100)
+    {
+        int probeIndex = (hashIndex + i) % M;
+        if (ht.table[probeIndex].Maso == EMPTY)
+        {
+            ht.table[probeIndex] = x;
+            ht.n++;
+            return 1;
+        }
+        i++;
+    }
     return 0;
 }

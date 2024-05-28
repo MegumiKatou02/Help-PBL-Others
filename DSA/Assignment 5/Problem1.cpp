@@ -92,5 +92,34 @@ void DeleteHashtable(Hashtable &ht) {
 int Delete(Hashtable &ht, int maso, int &nprob) {
 
 
+nprob = 0;
+    int M = ht.M;
+    int hashIndex = maso % M;
+    if (ht.table[hashIndex].Maso == maso)
+    {
+        ht.table[hashIndex].Maso = DELETE;
+        ht.n--;
+        return 1;
+    }
+
+    for (int i = 1; i < M; ++i)
+    {
+        nprob++;
+        int probeIndex = (hashIndex + i * i) % M;
+
+        if (ht.table[probeIndex].Maso == EMPTY)
+        {
+            return 0;
+        }
+
+        if (ht.table[probeIndex].Maso == maso)
+        {
+            ht.table[probeIndex].Maso = DELETE;
+            ht.n--;
+            return 1;
+        }
+    }
+
+    return 0;
 
 }

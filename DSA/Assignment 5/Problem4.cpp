@@ -168,5 +168,32 @@ void DeleteHashtable(Hashtable &ht) {
 }
 
 int Delete(Hashtable &ht, int maso) {
-    
+
+
+int index = Hash(ht, maso);
+    Node *current = ht.table[index].head;
+    Node *prev = NULL;
+
+    while (current != NULL)
+    {
+        if (current->data.Maso == maso)
+        {
+            if (prev == NULL)
+            {
+
+                RemoveHead(ht.table[index]);
+            }
+            else
+            {
+
+                RemoveAfter(ht.table[index], prev);
+            }
+            ht.n--;
+            return 1;
+        }
+        prev = current;
+        current = current->next;
+    }
+
+    return 0;
 }

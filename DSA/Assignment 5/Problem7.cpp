@@ -30,7 +30,7 @@ int main() {
     int n; cin >> n;
     for(int i = 0; i < n; i++)
     {
-        long long x; cin >> x;
+        int x; cin >> x;
         a.push_back(x);
     }
 
