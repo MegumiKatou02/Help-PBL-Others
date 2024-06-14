@@ -66,5 +66,5 @@ int main()
         result.pop();
     }
 
-    return 0;;;;;
+    return 0;
 }
