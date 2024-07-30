@@ -20,44 +20,15 @@ public:
 
 class Solution {
 private:
-    bool visited[101];
-    bool end[101];
-    bool first[101];
+    unordered_map<int, bool> visited;
+    unordered_map<int, bool> end;
+    unordered_map<int, bool> first;
 public:
-    Solution()
-    {
-        fill(visited, visited + 101, false);
-        fill(end, end + 101, false);
-        fill(first, first + 101, false);
-    }
-    void insert(Node *&root, int k)
-    {
-        if(root != nullptr)
-        {
-            if(k > root->val)
-                insert(root->right, k);
-            else if(k < root->val)
-                insert(root->left, k);
-        }
-        else root = new Node(k);
-    }
-    void print(Node *root)
-    {
-        if(root != nullptr)
-        {
-            cout << root->val << "\n";
-            print(root->left);
-            print(root->right);
-        }
-    }
-    Node* connect(Node* root) {
-        
-    }
     void Mark(Node *root)
     {
         if(root != nullptr)
         {
-            visited[root->val] = true;
+            end[root->val] = true;
             Mark(root->right);
         }
     }
@@ -65,13 +36,15 @@ public:
     {
         if(root != nullptr)
         {
-            visited[root->val] = true;
+            first[root->val] = true;
             MarkFirst(root->left);
         }
     }
-    void solve(Node *root)
+    Node *connect(Node *root)
     {
-        if(root == nullptr) return;
+        if(root == nullptr) return nullptr;
+        Mark(root);
+        MarkFirst(root);
         queue<Node*> q;
         visited[root->val] = true;
         q.push(root);
@@ -87,6 +60,15 @@ public:
             {
                 prev = v;   
             }
+            else
+            { 
+                prev->next = v;
+                prev = v;
+            }
+            if(end[v->val])
+            {
+                v->next = nullptr;
+            }
             if(v->left && !visited[left->val])
             {
                 q.push(left);
@@ -98,24 +80,46 @@ public:
                 visited[right->val] = true;
             }
         }
+        return root;
     }
-};
+};    
+// void insert(Node *&root, int k)
+//     {
+//         if(root != nullptr)
+//         {
+//             if(k > root->val)
+//                 insert(root->right, k);
+//             else if(k < root->val)
+//                 insert(root->left, k);
+//         }
+//         else root = new Node(k);
+//     }
+//     void print(Node *root)
+//     {
+//         if(root != nullptr)
+//         {
+//             cout << root->val << "\n";
+//             print(root->left);
+//             print(root->right);
+//         }
+//     }
+
+
 
 int main()
 {
 
     Solution s;
     Node *root = nullptr;
-    s.insert(root, 4);
-    s.insert(root, 2);
-    s.insert(root, 6);
-    s.insert(root, 1);
-    s.insert(root, 3);
-    s.insert(root, 5);
-    s.insert(root, 7);
+    // s.insert(root, 4);
+    // s.insert(root, 2);
+    // s.insert(root, 6);
+    // s.insert(root, 1);
+    // s.insert(root, 3);
+    // s.insert(root, 5);
+    // s.insert(root, 7);
 
     // s.print(root);
-    s.solve(root);
 
     return 0;
 }
