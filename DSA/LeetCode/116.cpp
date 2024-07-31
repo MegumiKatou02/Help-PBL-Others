@@ -2,124 +2,78 @@
 
 using namespace std;
 
-// Definition for a Node.
-class Node {
-public:
+struct ListNode {
     int val;
-    Node* left;
-    Node* right;
-    Node* next;
-
-    Node() : val(0), left(NULL), right(NULL), next(NULL) {}
-
-    Node(int _val) : val(_val), left(NULL), right(NULL), next(NULL) {}
-
-    Node(int _val, Node* _left, Node* _right, Node* _next)
-        : val(_val), left(_left), right(_right), next(_next) {}
+    ListNode *next;
+    ListNode() : val(0), next(nullptr) {}
+    ListNode(int x) : val(x), next(nullptr) {}
+    ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
 
 class Solution {
-private:
-    unordered_map<int, bool> visited;
-    unordered_map<int, bool> end;
-    unordered_map<int, bool> first;
 public:
-    void Mark(Node *root)
+    ListNode *Pivot(ListNode *head, ListNode *&tail, int x)
     {
-        if(root != nullptr)
+        ListNode *prev = nullptr;
+        while(head != nullptr)
         {
-            end[root->val] = true;
-            Mark(root->right);
+            if(head->val >= x)
+            {
+                tail = prev;
+                return head;
+            }
+            prev = head;
+            head = head->next;
         }
+        return nullptr;
     }
-    void MarkFirst(Node *root)
-    {
-        if(root != nullptr)
-        {
-            first[root->val] = true;
-            MarkFirst(root->left);
-        }
-    }
-    Node *connect(Node *root)
-    {
-        if(root == nullptr) return nullptr;
-        Mark(root);
-        MarkFirst(root);
-        queue<Node*> q;
-        visited[root->val] = true;
-        q.push(root);
-        Node *prev = nullptr;
-        while(!q.empty())
-        {
-            Node* v = q.front();
-            q.pop();
-            Node *left = v->left;
-            Node *right = v->right;
-            cout << v->val << " ";
-            if(first[v->val])
-            {
-                prev = v;   
-            }
-            else
-            { 
-                prev->next = v;
-                prev = v;
-            }
-            if(end[v->val])
-            {
-                v->next = nullptr;
-            }
-            if(v->left && !visited[left->val])
-            {
-                q.push(left);
-                visited[left->val] = true;
-            }
-            if(v->right && !visited[right->val])
-            {
-                q.push(right);
-                visited[right->val] = true;
-            }
-        }
-        return root;
-    }
-};    
-// void insert(Node *&root, int k)
-//     {
-//         if(root != nullptr)
-//         {
-//             if(k > root->val)
-//                 insert(root->right, k);
-//             else if(k < root->val)
-//                 insert(root->left, k);
-//         }
-//         else root = new Node(k);
-//     }
-//     void print(Node *root)
-//     {
-//         if(root != nullptr)
-//         {
-//             cout << root->val << "\n";
-//             print(root->left);
-//             print(root->right);
-//         }
-//     }
+    ListNode* partition(ListNode* head, int x) {
+        if(head == nullptr) return nullptr;
+        ListNode *tail = nullptr;
+        ListNode *pivot = Pivot(head, tail, x);
+        if(!pivot) return head;
+        ListNode *cur = pivot->next;
 
+        ListNode *prev = pivot;
 
+        // add first
+        ListNode *empty = new ListNode();
+        empty->next = head;
+        //
+        if(tail == nullptr)
+        {
+            tail = empty;
+        }
+        cout << pivot->val << "\n";
+
+        while(cur != nullptr)
+        {
+            if(cur->val < x)
+            {
+                cout << tail->val << " - " << prev->val << " - " << cur->val << " - ";
+                ListNode *temp = cur->next;
+                tail->next = cur;
+                cur->next = pivot;
+                prev->next = temp;
+                tail = cur;
+                cur = prev->next;
+                continue;
+            }
+            prev = cur;
+            if(cur != nullptr)
+                cur = cur->next;
+        }
+        head = empty->next;
+        
+        delete empty;
+        empty = nullptr;
+
+        return head;
+    }
+};
 
 int main()
 {
-
-    Solution s;
-    Node *root = nullptr;
-    // s.insert(root, 4);
-    // s.insert(root, 2);
-    // s.insert(root, 6);
-    // s.insert(root, 1);
-    // s.insert(root, 3);
-    // s.insert(root, 5);
-    // s.insert(root, 7);
-
-    // s.print(root);
 
     return 0;
 }
