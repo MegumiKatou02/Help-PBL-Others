@@ -218,8 +218,8 @@ public:
         // step 2
         Filter(board, true);
         // // duyet tung cell de xac phan tu doc lap
-        while(!isFull(board))
-        {
+        // while(!isFull(board))
+        // {
             vector<pair<int, int>> pa = OriginCell();
             for(const pair<int, int> p : pa)
             {
@@ -254,7 +254,7 @@ public:
                     }
                 }
             }
-        }
+        // }
 
         // cout << "-------------------\n";
         // for(int i = 0; i < N; i++)
@@ -376,17 +376,25 @@ int main()
                                     {'.','.','.','4','1','9','.','.','5'},
                                     {'.','.','.','.','8','.','.','7','9'}
                                 };
-    s.solveSudoku(c);
-
+    vector<vector<char>> pin(9, vector<char>(9, '.'));
     for(int i = 0; i < 9; i++)
     {
         for(int j = 0; j < 9; j++)
         {
-            cout << c[i][j] << " ";
+            cin >> pin[i][j];
+        }
+    }
+    s.solveSudoku(pin);
+
+    cout << endl;
+    for(int i = 0; i < 9; i++)
+    {
+        for(int j = 0; j < 9; j++)
+        {
+            cout << pin[i][j] << " ";
         }
         cout << "\n";
     }
-
 
     return 0;
 }
