@@ -24,7 +24,7 @@ public:
             prev = cur;
             cur = fur;
         }
-        head = cur;
+        head = prev;
         return head;
     }
 };

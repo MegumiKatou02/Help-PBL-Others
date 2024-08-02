@@ -10,7 +10,12 @@ public:
             int x = num[i - 1] - '0';
             int y = num[i] - '0';
             int z = num[i + 1] - '0';
+            if(x + y != z)
+            {
+                return false;
+            }
         }
+        return true;
     }
 };
 
