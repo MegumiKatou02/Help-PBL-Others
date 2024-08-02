@@ -11,11 +11,11 @@ public:
         int r = 2 * i + 2 ;
         if(l < N && nums[l] < nums[largest])
         {
-            largest = i;
+            largest = l;
         }
         if(r < N && nums[r] < nums[largest])
         {
-            largest = i;
+            largest = r;
         }
         if(largest != i)
         {
