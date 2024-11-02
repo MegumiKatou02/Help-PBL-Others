@@ -1,54 +1,35 @@
 #include <iostream>
+#include <vector>
+#include <functional>
 
 using namespace std;
 
 class Solution {
 public:
-    //ababcqmq
-    //abqm
-    //abcq
     bool isInterleave(string s1, string s2, string s3) {
-        int idx3 = 0;
-        int x = 0;
-        int y = 0;
-        string sx = "", sy = "";
-        pair<bool, bool> turn = {false, false};
-        while(idx3 < s3.length())
-        {
-            if(turn == make_pair(false, false) || turn == make_pair(true, false))
-            {
-                while(s3[idx3] == s1[x] && x < s1.length())
-                {
-                    sx += s1[x];
-                    idx3++;
-                    x++; 
-                    turn = {false, true};
-                }
-            }
-            else 
-            {
-                if(sx == sy) turn = {false, true}; // change round
-                else return false;
-            }
-            if(turn == make_pair(false, false) || turn == make_pair(false, true))
-            {
-                while(s3[idx3] == s2[y] && y < s2.length())
-                {
-                    sy += s2[y];
-                    idx3++;
-                    y++; 
-                    turn = {true, false};
-                }
-            }
-            else 
-            {
-                if(sx == sy) turn = {true, false}; // change round
-                else return false;
-            }
-            if(turn == make_pair(false, false)) return false;
+        int m = s1.size(), n = s2.size();
+        if (m + n != s3.size()) {
+            return false;
         }
-        if(sx != s1 || sy != s2) return false;
-        return true;
+        vector<vector<int>> f(m + 1, vector<int>(n + 1, -1));
+        function<bool(int, int)> dfs = [&](int i, int j) {
+            if (i >= m && j >= n) {
+                return true;
+            }
+            if (f[i][j] != -1) {
+                return f[i][j] == 1;
+            }
+            f[i][j] = 0;
+            int k = i + j;
+            if (i < m && s1[i] == s3[k] && dfs(i + 1, j)) {
+                f[i][j] = 1;
+            }
+            if (!f[i][j] && j < n && s2[j] == s3[k] && dfs(i, j + 1)) {
+                f[i][j] = 1;
+            }
+            return f[i][j] == 1;
+        };
+        return dfs(0, 0);
     }
 };
 
