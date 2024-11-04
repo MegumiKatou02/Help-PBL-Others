@@ -11,7 +11,14 @@
         "iostream": "cpp",
         "new": "cpp",
         "iosfwd": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "deque": "cpp",
+        "list": "cpp",
+        "string": "cpp",
+        "unordered_map": "cpp",
+        "unordered_set": "cpp",
+        "vector": "cpp",
+        "forward_list": "cpp"
     },
     "C_Cpp.errorSquiggles": "enabled"
 }
