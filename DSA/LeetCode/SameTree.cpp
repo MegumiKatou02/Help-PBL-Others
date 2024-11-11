@@ -22,7 +22,7 @@ public:
         }
         else if(p != nullptr && q == nullptr) return false;
         else if(p == nullptr && q != nullptr) return false;
-        else return true;
+        else return false;
     }
 };
 
